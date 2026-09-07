@@ -1,0 +1,56 @@
+# ============================================================
+#  .gitignore  -  Projet LaTeX (Business Plan BUT Info)
+#  Tout ce qui est ici est regenere a la compilation.
+# ============================================================
+
+# --- Fichiers de compilation LaTeX ---
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.synctex(busy)
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ilg
+*.ind
+*.glo
+*.gls
+*.glg
+*.acn
+*.acr
+*.alg
+*.xdv
+
+# --- Sortie PDF ---
+# On ne versionne pas le PDF intermediaire : il se recompile.
+# Le PDF FINAL a rendre au professeur est nomme explicitement
+# et reste suivi grace a l'exception ci-dessous.
+main.pdf
+BP_Info_S5_*.pdf
+!BP_Info_S5_*.pdf
+
+# --- Dossiers de travail ---
+build/
+out/
+_minted*/
+
+# --- Systeme et editeurs ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
+*.bak
+.vscode/
+.idea/
