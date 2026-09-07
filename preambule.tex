@@ -1,0 +1,105 @@
+% ============================================================
+%  PREAMBULE  -  Business Plan BUT Informatique S5/S6
+%  Ne pas ecrire de contenu ici : uniquement reglages et styles
+% ============================================================
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---------- Mise en page ----------
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}
+
+% ---------- Couleurs ----------
+\usepackage[table]{xcolor}
+\definecolor{bpbleu}{HTML}{1F3A5F}     % titres principaux
+\definecolor{bpaccent}{HTML}{2E6DA4}   % sous-titres
+\definecolor{bpgris}{HTML}{F2F4F7}     % fond d'en-tete de tableau
+\definecolor{bpvert}{HTML}{2E7D52}     % forces / opportunites
+\definecolor{bprouge}{HTML}{B3261E}    % faiblesses / menaces
+
+% ---------- Titres ----------
+\usepackage{titlesec}
+\titleformat{\section}{\Large\bfseries\color{bpbleu}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{bpaccent}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.8em}
+
+% ---------- En-tetes et pieds de page ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{bpbleu}\nomentreprise}
+\fancyhead[R]{\small\color{bpbleu}Business Plan \textendash{} \anneeuniv}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ---------- Tableaux ----------
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{ragged2e}
+\renewcommand{\arraystretch}{1.35}
+
+% Colonne X justifiee et colonne X centree
+\newcolumntype{L}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}{>{\Centering\arraybackslash}X}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+
+% ---------- Images, listes, liens ----------
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.3em}
+\usepackage{caption}
+\captionsetup{font=small,labelfont={bf,color=bpbleu}}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\urlstyle{same}
+
+% ============================================================
+%  COMMANDES DU PROJET  -  a modifier une seule fois
+% ============================================================
+\newcommand{\nomentreprise}{NOM\_ENTREPRISE}
+\newcommand{\anneeuniv}{2026\,--\,2027}
+\newcommand{\etudiantun}{Antoine Barthélémy}
+\newcommand{\etudiantdeux}{Simisola Agbe}
+\newcommand{\cycle}{S5/S6 BUT Informatique \textendash{} IUT de Reims-Châlons-Charleville}
+\newcommand{\prof}{Gilles Escuyer}
+\newcommand{\profmail}{Gilles.Escuyer@univ-reims.fr}
+
+% ============================================================
+%  ENVIRONNEMENTS REUTILISABLES
+% ============================================================
+
+% --- En-tete de tableau grise et en gras ---
+\newcommand{\thead}[1]{\cellcolor{bpgris}\textbf{#1}}
+
+% --- Encadre "hypothese a valider" ---
+\usepackage[most]{tcolorbox}
+\newtcolorbox{hypothese}{
+  colback=bpgris, colframe=bpaccent, boxrule=0.6pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt,
+  title=\textbf{Hypothèse à valider}, fonttitle=\small\color{white},
+  colbacktitle=bpaccent
+}
+
+% --- Tableau avantages / inconvenients (etape I) ---
+% Usage : \begin{avantinconv}{Titre de l'idee}
+%           Avantage & Inconvenient \\
+%         \end{avantinconv}
+\newenvironment{avantinconv}[1]
+{\par\vspace{0.4em}\noindent\textbf{#1}\par\vspace{0.3em}
+ \tabularx{\textwidth}{LL}
+ \toprule
+ \thead{Avantages} & \thead{Inconvénients} \\
+ \midrule}
+{\bottomrule\endtabularx\par\vspace{0.8em}}

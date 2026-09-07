@@ -1,0 +1,59 @@
+% ============================================================
+%  BUSINESS PLAN  -  BUT Informatique S5/S6  -  R5.01 / R6.01
+%  Antoine Barthelemy & Simisola Agbe
+%  Compilation : latexmk -pdf main.tex   (2 passes pour le sommaire)
+% ============================================================
+\documentclass[12pt,a4paper]{article}
+\input{preambule}
+
+\begin{document}
+
+\input{sections/00-page-de-garde}
+
+% ---------- Sommaire automatique ----------
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+% ---------- Introduction ----------
+\input{sections/01-introduction}
+
+% ============================================================
+%  PREMIERE PARTIE  -  RECHERCHE D'UN PROJET VIABLE
+% ============================================================
+\part*{Première partie \textendash{} Recherche d'un projet viable}
+\addcontentsline{toc}{section}{Première partie \textendash{} Recherche d'un projet viable}
+
+\input{sections/02-etape1-idees}
+\input{sections/03-etape2-selection}
+\input{sections/04-etape3-swot}
+
+% ============================================================
+%  DEUXIEME PARTIE  -  BUSINESS MODEL : ASPECT COMMERCIAL
+% ============================================================
+\part*{Deuxième partie \textendash{} Business Model : aspect commercial}
+\addcontentsline{toc}{section}{Deuxième partie \textendash{} Business Model : aspect commercial}
+
+\input{sections/05-etape4-marcheage}
+\input{sections/06-etape5-etude-marche}
+\input{sections/07-etape6-nom-logo}
+\input{sections/08-etape7-communication}
+
+% ============================================================
+%  TROISIEME PARTIE  -  ASPECT ORGANISATIONNEL ET FINANCEMENT
+% ============================================================
+\part*{Troisième partie \textendash{} Aspect organisationnel et financement}
+\addcontentsline{toc}{section}{Troisième partie \textendash{} Aspect organisationnel et financement}
+
+\input{sections/09-etape8-besoins}
+\input{sections/10-etape9-financement}
+\input{sections/11-etape10-previsionnel}
+\input{sections/12-etape11-juridique}
+
+% ---------- Conclusion, webographie, annexes ----------
+\input{sections/13-conclusion}
+\input{sections/14-webographie}
+\input{sections/15-annexes}
+
+\end{document}
